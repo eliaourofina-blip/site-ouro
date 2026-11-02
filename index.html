@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ouro Financiamentos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Ouro Financiamentos – correspondente bancário em Américo Brasiliense (SP). Consignado INSS, portabilidade, consignado CLT, FGTS e empréstimo pessoal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Manrope:wght@400;500;600&display=swap">
+<style>
+/* Layout: faixa de marca no topo, coluna única de leitura, cartão de dados da empresa ao lado no desktop */
+:root{
+  --bg:#F5F7F6; --surface:#FFFFFF; --fg:#16231F; --muted:#56635E; --line:#DDE3E0;
+  --green:#1E4A3D; --gold:#A87A22; --gold-soft:#F2E7CF;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Manrope", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1714; --surface:#16211D; --fg:#E8EEEB; --muted:#A2B0AA; --line:#2A3833;
+  --green:#7FC2A9; --gold:#D9AE57; --gold-soft:#2C2616; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1714; --surface:#16211D; --fg:#E8EEEB; --muted:#A2B0AA; --line:#2A3833;
+  --green:#7FC2A9; --gold:#D9AE57; --gold-soft:#2C2616; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.01em}
+.mark{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 35%, #E9C774, var(--gold) 70%);box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--gold) 60%,transparent)}
+nav{display:flex;gap:18px;flex-wrap:wrap;font-size:.95rem}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover,nav a:focus-visible{color:var(--fg);text-decoration:underline}
+.hero .wrap{padding-block:56px 40px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:start}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 18px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--gold)}
+.lead{font-size:1.1rem;color:var(--muted);max-width:56ch;margin:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+.card h2{font-family:var(--display);font-size:1rem;margin:0 0 12px;letter-spacing:.02em}
+dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 14px;margin:0;font-size:.95rem}
+dt{color:var(--muted)} dd{margin:0;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+section{padding-block:40px;border-top:1px solid var(--line)}
+section h2{font-family:var(--display);font-size:1.6rem;letter-spacing:-.01em;margin:0 0 8px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 24px;max-width:62ch}
+.produtos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.produto{padding:20px 22px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);min-width:0}
+.produto h3{margin:0 0 6px;font-size:1.05rem;font-family:var(--display)}
+.produto p{margin:0;color:var(--muted);font-size:.95rem}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:6px}
+.aviso{background:var(--gold-soft);border-radius:10px;padding:20px 22px;max-width:760px}
+.aviso strong{display:block;font-family:var(--display);margin-bottom:4px}
+.aviso p{margin:6px 0 0}
+.passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:24px;margin:0;padding:0;list-style:none;counter-reset:p}
+.passos li{counter-increment:p;min-width:0}
+.passos li::before{content:counter(p);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold);font-weight:600;font-size:.85rem;margin-bottom:8px}
+.passos h3{margin:0 0 4px;font-size:1rem}
+.passos p{margin:0;color:var(--muted);font-size:.95rem}
+.privacidade p,.privacidade li{max-width:68ch;color:var(--muted)}
+.privacidade h3{font-size:1rem;margin:22px 0 4px;color:var(--fg)}
+.privacidade ul{padding-left:20px;margin:6px 0}
+a{color:var(--green)}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+footer{border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr;padding-block:36px 28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><span class="mark" aria-hidden="true"></span>Ouro Financiamentos</div>
+    <nav aria-label="Seções">
+      <a href="#produtos">Produtos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#contato">Contato</a>
+      <a href="#privacidade">Privacidade</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Crédito consignado com atendimento <em>de perto</em>, em Américo Brasiliense.</h1>
+        <p class="lead">Ajudamos aposentados, pensionistas do INSS e trabalhadores a contratar, renovar ou trazer seu consignado para condições melhores. Simulamos em vários bancos e explicamos cada número antes de você assinar.</p>
+      </div>
+      <aside class="card" id="contato" aria-labelledby="dados-titulo">
+        <h2 id="dados-titulo">Dados da empresa</h2>
+        <dl>
+          <dt>Razão social</dt><dd>Oliveira Oliveira Financiamentos</dd>
+          <dt>Nome fantasia</dt><dd>Ouro Financiamentos</dd>
+          <dt>CNPJ</dt><dd>39.904.980/0001-92</dd>
+          <dt>Endereço</dt><dd>Av. Joaquim Pinto Pereira de Almeida, 124, sala 22 – Américo Brasiliense/SP – CEP 14820-294</dd>
+          <dt>Telefone</dt><dd><a href="tel:+5516997437327">(16) 99743-7327</a></dd>
+          <dt>E-mail</dt><dd><a href="mailto:eliatrice@ourofinanciamentos.com.br">eliatrice@ourofinanciamentos.com.br</a></dd>
+          <dt>Atendimento</dt><dd>Na loja, com hora marcada ou por telefone</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+
+  <section id="produtos">
+    <div class="wrap">
+      <h2>O que fazemos</h2>
+      <p class="sub">Atendemos Américo Brasiliense, Araraquara e cidades vizinhas.</p>
+      <div class="produtos">
+        <div class="produto"><span class="tag">INSS</span><h3>Consignado novo</h3><p>Crédito com desconto direto no benefício, usando a margem disponível.</p></div>
+        <div class="produto"><span class="tag">INSS</span><h3>Refinanciamento</h3><p>Renovação de contrato em andamento, com possibilidade de valor liberado (troco).</p></div>
+        <div class="produto"><span class="tag">INSS</span><h3>Portabilidade</h3><p>Transferência do contrato para outro banco, buscando taxa menor ou parcela mais baixa.</p></div>
+        <div class="produto"><span class="tag">Trabalhador</span><h3>Consignado CLT</h3><p>Crédito para trabalhadores com carteira assinada, com desconto em folha.</p></div>
+        <div class="produto"><span class="tag">FGTS</span><h3>Antecipação do saque-aniversário</h3><p>Antecipação das parcelas do saque-aniversário do FGTS.</p></div>
+        <div class="produto"><span class="tag">Pessoal</span><h3>Empréstimo pessoal</h3><p>Opções de crédito pessoal, conforme análise da instituição financeira.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="wrap">
+      <h2>Como funciona</h2>
+      <p class="sub">Você só assina depois de entender a proposta.</p>
+      <ol class="passos">
+        <li><h3>Conversa e documentos</h3><p>Ouvimos o que você precisa e conferimos documento com foto e extrato do benefício ou holerite.</p></li>
+        <li><h3>Simulação</h3><p>Comparamos as condições dos bancos parceiros: taxa, prazo, parcela e valor liberado.</p></li>
+        <li><h3>Proposta</h3><p>Digitamos a proposta no banco escolhido. A formalização é feita no sistema da própria instituição.</p></li>
+        <li><h3>Acompanhamento</h3><p>Avisamos cada etapa até o pagamento e continuamos à disposição depois.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="aviso" role="note">
+        <strong>Correspondente bancário</strong>
+        <p>A Ouro Financiamentos atua como correspondente no País de instituições financeiras parceiras, por meio de promotora de crédito credenciada. A concessão de crédito está sujeita à análise e aprovação da instituição financeira, que é a responsável pelo contrato.</p>
+        <p><b>Não cobramos nenhum valor antecipado</b> para liberar empréstimo. Desconfie de qualquer pedido de depósito ou pagamento para aprovar crédito.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacidade" class="privacidade">
+    <div class="wrap">
+      <h2>Política de privacidade</h2>
+      <p class="sub">Como tratamos seus dados pessoais, de acordo com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+      <h3>Quais dados coletamos</h3>
+      <p>Nome, CPF, telefone, e-mail, endereço, dados do benefício ou do vínculo de trabalho e informações dos contratos de crédito, quando você nos procura para simular ou contratar.</p>
+      <h3>Para que usamos</h3>
+      <ul>
+        <li>Fazer simulações e enviar propostas às instituições financeiras escolhidas por você;</li>
+        <li>Falar com você sobre o andamento das propostas, inclusive por telefone e WhatsApp;</li>
+        <li>Enviar ofertas, somente se você autorizar. Você pode cancelar a qualquer momento respondendo "SAIR".</li>
+      </ul>
+      <h3>Com quem compartilhamos</h3>
+      <p>Somente com as instituições financeiras e a promotora de crédito envolvidas na sua proposta, e com fornecedores de sistemas que nos ajudam no atendimento, sempre para essas finalidades. Não vendemos seus dados.</p>
+      <h3>Seus direitos</h3>
+      <p>Você pode pedir acesso, correção ou exclusão dos seus dados, ou retirar seu consentimento, pelo e-mail eliatrice@ourofinanciamentos.com.br ou na nossa loja.</p>
+      <h3>Por quanto tempo guardamos</h3>
+      <p>Pelo tempo necessário para o atendimento e para cumprir obrigações legais e regulatórias.</p>
+      <p>Última atualização: 2 de novembro de 2026.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Oliveira Oliveira Financiamentos · CNPJ 39.904.980/0001-92</span>
+    <span>Américo Brasiliense/SP · ourofinanciamentos.com.br</span>
+  </div>
+</footer>
+</body>
+</html>
